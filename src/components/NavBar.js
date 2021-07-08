@@ -1,4 +1,6 @@
 import './NavBar.css'
+import './CartWidget.js'
+import CartWidget from './CartWidget.js'
 
 function NavBar() {
     return (
@@ -11,7 +13,7 @@ function NavBar() {
                         <li className="elementoListaNav">Inicio</li> 
                         <li className="elementoListaNav">Productos</li>
                         <li className="elementoListaNav">Galería</li>
-                        <li className="elementoListaNav">Carrito</li>
+                        <li className="elementoListaNav"><CartWidget/></li>
                         
                         
                     </ul>
