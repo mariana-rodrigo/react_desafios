@@ -10,10 +10,10 @@ function App() {
         <NavBar/>
         
       </header>
-      <body>
-        <ItemListContainer greetings={'Hola Usuario!'}/>
+     
+        <ItemListContainer greetings={'Productos'}/>
         <ItemCount/> 
-      </body>
+      
     </div>
   );
 
