@@ -1,5 +1,5 @@
 import React from "react"
-
+import ItemList from'./ItemList'
 
 class ItemListContainer extends React.Component{
     
@@ -8,7 +8,9 @@ class ItemListContainer extends React.Component{
         return (
             <div>
                 <h1>{this.props.greetings}</h1>
+                <ItemList/>
             </div>
+
         )
     }
 }
