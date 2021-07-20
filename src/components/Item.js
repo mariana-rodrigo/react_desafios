@@ -1,9 +1,24 @@
-// let ServerOnline = true;
-function Item (props){
-    
-    
 
-        return(
+
+
+
+const data = () => {
+    return new Promise ((resolve, rejected) => {
+        setTimeout ( () => {
+            resolve ('Resuelto');
+        }, 2000);
+        setTimeout(()=>{
+            rejected('Rechazado');
+        }, 6000);
+    });
+};
+
+
+
+
+function Item (props){
+    data().then(resolve=>console.log(resolve)).catch(error=>console.col(error))  
+    return(
             <div>
                 <img src={props.imagenTorta} alt="torta"/>
                 <h2>{props.nombreTorta}</h2>
@@ -13,23 +28,6 @@ function Item (props){
 
 
 
-
-    // let ServerOnline = true;
-    // let promesa = new Promise((resolve,reject)=>{
-    //     setTimeout(()=>{
-    //         if(ServerOnline){
-    //             resolve("[{\"id\":1,\"image\":\"https://images-na.ssl-images-amazon.com/images/I/81VBPk5pnLL._AC_SL1500_.jpg\"},{\"id\":1,\"image\":\"https://images-na.ssl-images-amazon.com/images/I/81VBPk5pnLL._AC_SL1500_.jpg\"},{\"id\":1,\"image\":\"https://images-na.ssl-images-amazon.com/images/I/81VBPk5pnLL._AC_SL1500_.jpg\"},{\"id\":1,\"image\":\"https://images-na.ssl-images-amazon.com/images/I/81VBPk5pnLL._AC_SL1500_.jpg\"},{\"id\":1,\"image\":\"https://images-na.ssl-images-amazon.com/images/I/81VBPk5pnLL._AC_SL1500_.jpg\"},{\"id\":1,\"image\":\"https://images-na.ssl-images-amazon.com/images/I/81VBPk5pnLL._AC_SL1500_.jpg\"}]");
-    //         }else{
-    //             reject( new Error('Servidor sin conexion'));
-    //         }
-    //     },3000);    
-    // });
-    // console.log(promesa);
-    //  let data = await promesa;
-    //  console.log(data);
-    //  data = JSON.parse(data);
-
-    //  setProducts(data); 
 
 
 export default Item;
