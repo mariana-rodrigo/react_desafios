@@ -9,7 +9,7 @@ function ItemDetail(props){
                 {props.descripcionTorta}
             </p>
             <h3>
-                {props.precioTorta}
+                {props.precio}
             </h3>
 
         </div>
