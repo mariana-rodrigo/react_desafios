@@ -1,0 +1,58 @@
+[
+
+    {
+        "id":1,
+        "image":"./imagenes/Bomba.jpg",
+        "title":"Torta Bomba",
+        "descripcion": "Bizcochuelo húmedo de chocolate, merengue italiano, mouse de chocolate",
+        "categoria":"Tortas",
+        "price": "1700",
+        "stock": "4"
+    },
+    {
+        "id":2,
+        "image":"./imagenes/Paraiso.jpg",
+        "title":"Torta Paraiso",
+        "descripcion": "Bizcochuelo de vainilla, relleno ganache de chocolate con leche recubierto con crocante de avellanas y maní",
+        "categoria":"Tortas",
+        "price": "1900",
+        "stock": "10"
+    },
+    {
+        "id":3,
+        "image":"./imagenes/Infierno.jpg",
+        "title":"Torta Infierno",
+        "descripcion": "Bizcochuelo Red Velvet. Crema de Maracuyá y cardamomo. Ganache de chocolate blanco",
+        "categoria":"Tortas",
+        "price": "1600",
+        "stock": "7"
+    },
+    {
+        "id":4,
+        "image":"./imagenes/LimaLimon.jpg",
+        "title":"Torta Lima Limón",
+        "descripcion": "Bizcochuelo de vainilla. Relleno Ganache de limón con crocantes de pistacho. Recubierto con merengue italiano con lima",
+        "categoria":"Tortas",
+        "price": "1500",
+        "stock": "8"
+    },
+    {
+        "id":5,
+        "image":"./imagenes/Dartagnan.png",
+        "title":"Torta D'Artagnan",
+        "descripcion": "Bizcochuelo de Naranja. Crema de Pistacho y Nutella. Ganache de chocolate blanco",
+        "categoria":"Pasteleria",
+        "price": "1800",
+        "stock": "8"
+    },
+    {
+        "id":6,
+        "image":"./imagenes/Cale.jpg",
+        "title":"TortaCale",
+        "descripcion": "Bizcochuelo marmolado de café. Relleno crema rusa. Recubierto con chocolate amargo y crocantes de maní",
+        "categoria":"Pasteleria",
+        "price": "1900",
+        "stock": "10"
+    }
+
+]

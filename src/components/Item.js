@@ -1,3 +1,5 @@
+import '../Item.css';
+import ItemCount from "./ItemCount"
 
 
 
@@ -17,11 +19,16 @@ const data = () => {
 
 
 function Item (props){
-    data().then(resolve=>console.log(resolve)).catch(error=>console.col(error))  
+    data().then(resolve=>console.log(resolve)).catch(error=>console.col(error))
+    
     return(
-            <div>
-                <img src={props.imagenTorta} alt="torta"/>
+            <div className='item'> 
+                <img src={props.imagenTorta} alt="torta" className='imagen'/>
                 <h2>{props.nombreTorta}</h2>
+                <h3>
+                    {props.precioTorta}
+                </h3>
+                <ItemCount/>
             </div>
         )
     }

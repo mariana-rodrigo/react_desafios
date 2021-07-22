@@ -10,3 +10,6 @@
     font-size: 25px;
     width: 15%;
 }
+.nav{
+    background-image: linear-gradient(to left, #de2c62, #1dedfd);
+}

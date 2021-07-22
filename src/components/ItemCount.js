@@ -5,7 +5,7 @@ import React from "react"
 class ItemCount extends React.Component{ 
     constructor(props) {
         super(props);
-        this.state = { value: 0};
+        this.state = { value: 1};
     }
     render() {
 
@@ -21,10 +21,11 @@ class ItemCount extends React.Component{
                     : <button className="botonSumaDeshabilitado"> + </button>
                 }
 
-                {this.state.value>0
+                {this.state.value>1
                     ? <button className="botonResta" onClick={() => this.setState({value: this.state.value-1})}>-</button>
                     : <button className="botonRestaDeshabilitado"> - </button>
                 }
+                <button>Agregar al carrito</button>
             </div>
         )
     }
