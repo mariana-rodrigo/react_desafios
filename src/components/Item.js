@@ -1,5 +1,5 @@
 import '../Item.css';
-import ItemCount from "./ItemCount"
+
 import {Link} from'react-router-dom'
 
 
@@ -30,7 +30,7 @@ function Item (props){
                     <h3>
                         {props.precioTorta}
                     </h3>
-                    <ItemCount/>
+                    
                 </Link>
             </div>
         )

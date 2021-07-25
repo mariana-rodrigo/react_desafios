@@ -1,34 +1,30 @@
-import React from "react"
+import React, { useState } from "react"
 
 
 
-class ItemCount extends React.Component{ 
-    constructor(props) {
-        super(props);
-        this.state = { value: 1};
-    }
-    render() {
 
-        const stock =  10; 
-        return (
-            <div>
-                <p>
-                    {this.state.value}
-                </p>
-                
-                {this.state.value<stock
-                    ? <button className="botonSuma" onClick={() => this.setState({value: this.state.value+1})}>+</button>
-                    : <button className="botonSumaDeshabilitado"> + </button>
-                }
+function ItemCount(props) {
+    const [value, setValue] = useState(1);
 
-                {this.state.value>1
-                    ? <button className="botonResta" onClick={() => this.setState({value: this.state.value-1})}>-</button>
-                    : <button className="botonRestaDeshabilitado"> - </button>
-                }
-                <button>Agregar al carrito</button>
-            </div>
-        )
-    }
+    return (
+        <div>
+            <p>
+                {value}
+            </p>
+
+            {value < props.stock
+                ? <button className="botonSuma" onClick={() => setValue(value + 1)}>+</button>
+                : <button className="botonSumaDeshabilitado"> + </button>
+            }
+
+            {value > 1
+                ? <button className="botonResta" onClick={() => setValue(value - 1)}>-</button>
+                : <button className="botonRestaDeshabilitado"> - </button>
+            }
+            <button  onClick={props.onAdd}>Agregar al carrito</button>
+        </div>
+    )
+
 }
 
 export default ItemCount;
