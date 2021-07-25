@@ -1,5 +1,6 @@
 import '../Item.css';
 import ItemCount from "./ItemCount"
+import {Link} from'react-router-dom'
 
 
 
@@ -20,15 +21,17 @@ const data = () => {
 
 function Item (props){
     data().then(resolve=>console.log(resolve)).catch(error=>console.col(error))
-    
+    const id= props.idTorta;
     return(
             <div className='item'> 
-                <img src={props.imagenTorta} alt="torta" className='imagen'/>
-                <h2>{props.nombreTorta}</h2>
-                <h3>
-                    {props.precioTorta}
-                </h3>
-                <ItemCount/>
+                <Link to= {"/producto/"+id}>
+                    <img src={props.imagenTorta} alt="torta" className='imagen'/>
+                    <h2>{props.nombreTorta}</h2>
+                    <h3>
+                        {props.precioTorta}
+                    </h3>
+                    <ItemCount/>
+                </Link>
             </div>
         )
     }

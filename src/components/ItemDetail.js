@@ -1,4 +1,4 @@
-
+import ItemCount from "./ItemCount";
 
 function ItemDetail(props){
     
@@ -14,6 +14,7 @@ function ItemDetail(props){
             <h3>
                 {props.precio}
             </h3>
+            <ItemCount/>
 
         </div>
     )
