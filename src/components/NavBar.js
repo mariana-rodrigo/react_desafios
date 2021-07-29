@@ -7,7 +7,7 @@ import React, {useContext} from 'react'
 
 
 function NavBar() {
-    const {  cartCount } = useCartContext();
+    const {  count } = useCartContext();
     
     return (
         
@@ -20,7 +20,7 @@ function NavBar() {
                         <li className="elementoListaNav"><Link to={'/tortas'}> Tortas </Link></li>
                         <li className="elementoListaNav"> <Link to={'/pasteleria'}>Pastelería </Link></li>
                         
-                        <li className="elementoListaNav"><Link to={'/cart'}><CartWidget/>{cartCount}</Link></li>
+                        <li className="elementoListaNav"><Link to={'/cart'}><CartWidget/>{count}</Link></li>
                         
                         
                     </ul>

@@ -16,27 +16,28 @@ function App() {
       <CartProvider>
         <div className="App">
           <header>
-            <Header/>
-            <NavBar/>
-            
+            <Header />
+            <NavBar />
+
           </header>
           <Switch>
-            <Route exact path ="/">
-              <ItemListContainer/>
+            <Route path="/cart">
+              <Cart />
             </Route>
-            <Route path ="/producto/:id">
-              <ItemDetailComponer/>
+            <Route exact path="/">
+              <ItemListContainer />
             </Route>
-            <Route path ="/:categoria">
-              <ItemListContainer/>
+            <Route path="/producto/:id">
+              <ItemDetailComponer />
             </Route>
-            <Route exact path ="/cart">
-              <Cart/>
+            <Route path="/:categoria">
+              <ItemListContainer />
             </Route>
-            
-            </Switch>
+
+
+          </Switch>
         </div>
-        </CartProvider>  
+      </CartProvider>
     </BrowserRouter>
   );
 

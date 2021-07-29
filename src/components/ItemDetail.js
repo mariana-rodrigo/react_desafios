@@ -7,7 +7,7 @@ function ItemDetail(props){
     const stock = props.stockTorta;
     const [agregoProducto, setAgregoProducto] = useState (false);
     
-
+    const {updateCarrito } = useCartContext();
     
     const { updateCartCount} = useCartContext();
     
@@ -15,7 +15,11 @@ function ItemDetail(props){
         setAgregoProducto(true)
         
         updateCartCount (cantidadDeTortas);
+
+        updateCarrito([cantidadDeTortas, producto])
+        
     }
+    
 
     
 
