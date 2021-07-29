@@ -1,14 +1,24 @@
 import ItemCount from "./ItemCount";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import {useCartContext } from './Context'
 
 function ItemDetail(props){
     const stock = props.stockTorta;
     const [agregoProducto, setAgregoProducto] = useState (false);
-    const onAdd=()=>{
-        setAgregoProducto(true)
+    
 
+    
+    const { updateCartCount} = useCartContext();
+    
+    const onAdd=(cantidadDeTortas, producto)=>{
+        setAgregoProducto(true)
+        
+        updateCartCount (cantidadDeTortas);
     }
+
+    
+
     if (agregoProducto===true){
         return(
         <div>
@@ -29,7 +39,7 @@ function ItemDetail(props){
                     {props.precio}
                 </h3>
                 
-                <ItemCount stock ={stock} onAdd={onAdd} />
+                <ItemCount stock ={stock} onAdd={onAdd} nombreTorta={props.nombreTorta} />
     
             </div>
         )

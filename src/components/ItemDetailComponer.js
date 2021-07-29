@@ -64,12 +64,7 @@ function ItemDetailComponer() {
   const { id } = useParams();
   if (detallesTortas.length > 0) {
 
-    /*let productoSeleccionado;
-    for (let i = 0; i < detallesTortas.length; i++) {
-      if (id === detallesTortas[i].id) {
-        productoSeleccionado = detallesTortas[i]
-      }
-    }*/
+    
     const productoSeleccionado = detallesTortas.find( (unaTorta) => id === unaTorta.id )
     return (
       <div>
