@@ -21,7 +21,7 @@ function ItemListContainer() {
 
             setTimeout(() => {
                 resolve(tortas);
-            }, 2000);
+            }, 500);
         });
 
         task.then(

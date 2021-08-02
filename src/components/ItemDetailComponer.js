@@ -48,7 +48,7 @@ function ItemDetailComponer() {
 
       setTimeout(() => {
         resolve(detallesTortas);
-      }, 2000);
+      }, 500);
     });
 
     task.then(

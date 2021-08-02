@@ -13,7 +13,7 @@ const CartProvider =({children}) => {
     }
 
     const [cart, setCart] =useState([]);
-    const updateCarrito = ({producto}) =>{
+    const updateCarrito = (producto) =>{
         setCart(cart.concat([producto]))
     }
     

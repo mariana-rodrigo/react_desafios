@@ -16,7 +16,9 @@ function ItemDetail(props){
         
         updateCartCount (cantidadDeTortas);
 
-        updateCarrito([cantidadDeTortas, producto])
+        const productoElegido = {cantidadDeTortas, producto}
+
+        updateCarrito(productoElegido)
         
     }
     

@@ -1,17 +1,31 @@
-import React, {useContext} from 'react'
-import  {CartContext, useCartContext} from './Context'
+import React from 'react'
+import { useCartContext } from './Context'
 
+const agruparTortas = (cart, nombreDelProducto) => {
+    let cantidadDeTortaBomba = 0;
+    for (let i = 0; i < cart.length; i++) {
+        if (cart[i].producto === nombreDelProducto) {
+            cantidadDeTortaBomba = cantidadDeTortaBomba + cart[i].cantidadDeTortas;
+        }
+    }
+    return cantidadDeTortaBomba;
+}
+function uniq(a) {
+    return Array.from(new Set(a));
+}
 
+function Cart() {
+    const { cart } = useCartContext();
 
-
-function Cart(){
-    const {  cart } = useCartContext();
-    console.log (cart)
-    return(
+    const productosElegidos = cart.map((itemDelCarrito) => itemDelCarrito.producto)
+    const productosElegidosSinDuplicados = uniq(productosElegidos);
+    return (
         <div>
             <h1> Carrito</h1>
-            
-            <p> {cart}</p>
+
+            {productosElegidosSinDuplicados.map((productoElegido) => (
+                <p> {productoElegido} x {agruparTortas(cart, productoElegido)}</p>
+            ))}
         </div>
     )
 }
