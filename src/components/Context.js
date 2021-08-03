@@ -26,12 +26,9 @@ const CartProvider =({children}) => {
         }
         setCart(cart);
     }
-    const restarProducto = () =>{
-        setCount()
-    }
     
     return(
-        <CartContext.Provider value={{  count, updateCartCount, updateCarrito, cart, eliminarProducto, restarProducto }}>
+        <CartContext.Provider value={{  count, updateCartCount, updateCarrito, cart, eliminarProducto }}>
             {children}
         </CartContext.Provider>
     )

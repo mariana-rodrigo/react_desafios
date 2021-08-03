@@ -16,17 +16,24 @@ const agruparTortas = (cart, nombreDelProducto) => {
 
 const sumaPrecio = (cart, nombreDelProducto) => {
     
-    let precioFinal = 0;
+    let precioFinalPorProducto = 0;
     for (let i = 0; i < cart.length; i++) {
         if (cart[i].producto === nombreDelProducto) {
             
-            precioFinal=cart[i].precioFinal + precioFinal;
+            precioFinalPorProducto=cart[i].precioFinal + precioFinalPorProducto;
         }
     }
-    return  precioFinal
+    return  precioFinalPorProducto
 }
 
-
+const sumaTotal = (cart) => {
+    
+    let precioFinalTotal = 0;
+    for (let i = 0; i < cart.length; i++) {
+        precioFinalTotal=precioFinalTotal+cart[i].precioFinal
+    }
+    return  precioFinalTotal
+}
 
 function uniq(a) {
     return Array.from(new Set(a));
@@ -64,6 +71,7 @@ function Cart() {
                         </button>
                     </div>
                 ))}
+                <h2> Total a pagar ${sumaTotal(cart)}</h2>
             </div>
             
         )
