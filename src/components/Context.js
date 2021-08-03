@@ -8,7 +8,7 @@ const CartProvider =({children}) => {
     
     const [count, setCount] = useState(0);
     const updateCartCount = (cantidad) => {
-        setCount(previo => previo+cantidad)
+        setCount(cantidad)
         
     }
 
@@ -16,9 +16,22 @@ const CartProvider =({children}) => {
     const updateCarrito = (producto) =>{
         setCart(cart.concat([producto]))
     }
+
+    const eliminarProducto = (productoAEliminar) => {
+        for (let i = 0; i < cart.length; i++) {
+            if (cart[i].producto === productoAEliminar) {
+                
+                cart.splice(i,1)
+            }
+        }
+        setCart(cart);
+    }
+    const restarProducto = () =>{
+        setCount()
+    }
     
     return(
-        <CartContext.Provider value={{  count, updateCartCount, updateCarrito, cart }}>
+        <CartContext.Provider value={{  count, updateCartCount, updateCarrito, cart, eliminarProducto, restarProducto }}>
             {children}
         </CartContext.Provider>
     )

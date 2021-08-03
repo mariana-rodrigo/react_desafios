@@ -17,7 +17,7 @@ function ItemDetailComponer() {
           nombre: "Torta Bomba",
           imagen: Bomba,
           descripcion: "Bizcochuelo húmedo de chocolate, merengue Italiano, mouse de chocolate",
-          precio: "$1700",
+          precio: 1500,
           stock: 10
         },
         {
@@ -25,7 +25,7 @@ function ItemDetailComponer() {
           nombre: "Torta Infierno",
           imagen: Infierno,
           descripcion: "Bizcochuelo Red Velvet, crema de Maracuyá y cardamomo ,ganache de chocolate blanco",
-          precio: "$1600",
+          precio: 1600,
           stock: 10
         },
         {
@@ -33,7 +33,7 @@ function ItemDetailComponer() {
           nombre: "Macarons x6",
           imagen: Macarons,
           descripcion: "Super caja customizable: elegí tus propios sabores y armá tu caja como vos quieras!",
-          precio: "$700",
+          precio: 700,
           stock: 10
         },
         {
@@ -41,7 +41,7 @@ function ItemDetailComponer() {
           nombre: "Infierno",
           imagen: Cupcakes,
           descripcion: "Bizcochuelo Red Velvet, crema de Maracuyá y cardamomo ,ganache de chocolate blanco",
-          precio: "$1600",
+          precio: 1600,
           stock: 10
         }
       ]

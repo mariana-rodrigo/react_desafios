@@ -6,6 +6,7 @@ import React, { useState } from "react"
 function ItemCount(props) {
     const [value, setValue] = useState(1);
     const producto=props.nombreTorta
+    const precio =props.precio
     return (
         <div>
             <p>
@@ -21,7 +22,7 @@ function ItemCount(props) {
                 ? <button className="botonResta" onClick={() => setValue(value - 1)}>-</button>
                 : <button className="botonRestaDeshabilitado"> - </button>
             }
-            <button  onClick={() => props.onAdd(value, producto)}>Agregar al carrito</button>
+            <button  onClick={() => props.onAdd(value, producto, precio)}>Agregar al carrito</button>
         </div>
     )
 

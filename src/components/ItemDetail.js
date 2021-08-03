@@ -9,20 +9,20 @@ function ItemDetail(props){
     
     const {updateCarrito } = useCartContext();
     
-    const { updateCartCount} = useCartContext();
+    const { updateCartCount, count} = useCartContext();
     
-    const onAdd=(cantidadDeTortas, producto)=>{
+    const onAdd=(cantidadDeTortas, producto, precio)=>{
         setAgregoProducto(true)
         
-        updateCartCount (cantidadDeTortas);
-
-        const productoElegido = {cantidadDeTortas, producto}
-
+        updateCartCount (cantidadDeTortas + count);
+        const precioFinal= cantidadDeTortas*precio;
+        const productoElegido = {cantidadDeTortas, producto, precioFinal}
+        
         updateCarrito(productoElegido)
         
     }
     
-
+const precio = props.precio;
     
 
     if (agregoProducto===true){
@@ -42,10 +42,10 @@ function ItemDetail(props){
                     {props.descripcionTorta}
                 </p>
                 <h3>
-                    {props.precio}
+                    ${precio}
                 </h3>
                 
-                <ItemCount stock ={stock} onAdd={onAdd} nombreTorta={props.nombreTorta} />
+                <ItemCount stock ={stock} onAdd={onAdd} nombreTorta={props.nombreTorta} precio ={precio} />
     
             </div>
         )

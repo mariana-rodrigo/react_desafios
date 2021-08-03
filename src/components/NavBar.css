@@ -13,3 +13,6 @@
 .nav{
     background-image: linear-gradient(to left, #de2c62, #1dedfd);
 }
+.cartwidgetOculto{
+    display: none;
+}

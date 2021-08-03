@@ -6,7 +6,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import ItemDetailComponer from './components/ItemDetailComponer';
 
 import Cart from './components/Cart';
-import CartProvider, { CartContext } from './components/Context'
+import CartProvider from './components/Context'
 
 
 
