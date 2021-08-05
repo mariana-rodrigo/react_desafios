@@ -1,38 +1,25 @@
 import ItemList from './ItemList'
 import React, { useState, useEffect } from "react";
-import Bomba from "../imagenes/Bomba.jpg";
-import Infierno from "../imagenes/Infierno.jpeg";
-import Macarons from "../imagenes/Macarons.jfif";
-import Cupcake from "../imagenes/Cupcake.jpg"
 import { useParams } from 'react-router';
+import { getFirestore } from '../firebase'
 
 
 function ItemListContainer() {
     const [tortas, setTortas] = useState([]);
 
     useEffect(() => {
-        const task = new Promise((resolve, reject) => {
-            const tortas = [
-                { nombre: "Torta Bomba", imagen: Bomba, precio: '$1500', categoria: "tortas", id: 1 },
-                { nombre: "Torta Infierno", imagen: Infierno, precio: '$1800', categoria: "tortas", id: 2 },
-                { nombre: "Macarons", imagen: Macarons, precio: '$800', categoria: "pasteleria", id: 3 },
-                { nombre: "Cupcakes", imagen: Cupcake, precio: '$500', categoria: "pasteleria", id: 4 }
-            ];
+        const firestore = getFirestore();
+        const collection = firestore.collection('productos');
+        const tortasArray = []
+        const query = collection.get();
 
-            setTimeout(() => {
-                resolve(tortas);
-            }, 500);
-        });
-
-        task.then(
-            (resultadoDelPromise) => {
-                setTortas(resultadoDelPromise);
-            },
-            (rej) => {
-                console.log("Error");
-            }
-        );
-    }, []);
+        query.then((resultado) => {
+            resultado.forEach(documento => {
+                tortasArray.push(documento.data())
+            })
+            setTortas(tortasArray)
+        })
+    }, [])
 
     const { categoria } = useParams();
     if (categoria === undefined) {
@@ -43,8 +30,7 @@ function ItemListContainer() {
         )
 
     } else {
-        const tortasQueSonDeLaCategoria = tortas.filter((producto) => categoria === producto.categoria)
-
+        const tortasQueSonDeLaCategoria = tortas.filter((tortas) => categoria === tortas.categoria)
         return (
             <div>
                 <ItemList tortas={tortasQueSonDeLaCategoria} />

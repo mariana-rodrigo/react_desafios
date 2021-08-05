@@ -38,9 +38,7 @@ const precio = props.precio;
                     {props.nombreTorta}
                 </h2>
                 <img src={props.imagenTorta} alt="torta"/>
-                <p>
-                    {props.descripcionTorta}
-                </p>
+                
                 <h3>
                     ${precio}
                 </h3>

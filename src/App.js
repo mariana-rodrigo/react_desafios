@@ -7,6 +7,7 @@ import ItemDetailComponer from './components/ItemDetailComponer';
 
 import Cart from './components/Cart';
 import CartProvider from './components/Context'
+import {} from './firebase'
 
 
 
