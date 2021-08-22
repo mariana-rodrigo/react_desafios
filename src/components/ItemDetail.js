@@ -1,7 +1,9 @@
 import ItemCount from "./ItemCount";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import {useCartContext } from './Context'
+import {useCartContext } from './Context';
+import '../Item.css';
+
 
 function ItemDetail(props){
     const stock = props.stockTorta;
@@ -33,15 +35,18 @@ const precio = props.precio;
         )
     }else{
         return (
-            <div>
+            <div >
                 <h2>
                     {props.nombreTorta}
                 </h2>
-                <img src={props.imagenTorta} alt="torta"/>
-                
+                <img src={props.imagenTorta} alt="torta" className='imagen'/>
+                <p>
+                    {props.descripcionTorta}
+                </p>
                 <h3>
                     ${precio}
                 </h3>
+
                 
                 <ItemCount stock ={stock} onAdd={onAdd} nombreTorta={props.nombreTorta} precio ={precio} />
     

@@ -1,7 +1,7 @@
 import ItemDetail from './ItemDetail';
 import React, { useState, useEffect } from "react";
 import { useParams } from 'react-router';
-
+import '../ItemDetailContainer.css';
 import { getFirestore } from '../firebase'
 
 function ItemDetailComponer() {
@@ -30,7 +30,7 @@ function ItemDetailComponer() {
     
     const productoSeleccionado = tortas.find( (unaTorta) => id === unaTorta.id )
     return (
-      <div>
+      <div className='itemDetailContainer' >
         <ItemDetail nombreTorta={productoSeleccionado.nombre}  descripcionTorta={productoSeleccionado.descripcion} 
         precio={productoSeleccionado.precio} idTorta={productoSeleccionado.id} stockTorta ={productoSeleccionado.stock} imagenTorta={productoSeleccionado.imagen}/>
       </div>)

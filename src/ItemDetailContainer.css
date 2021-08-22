@@ -1,0 +1,11 @@
+.itemDetailContainer{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 2px solid crimson;
+    padding: 10px;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    margin-left: 25%;
+    
+}

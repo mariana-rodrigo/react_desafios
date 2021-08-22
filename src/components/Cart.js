@@ -2,6 +2,7 @@ import {React, useState} from 'react'
 import { useCartContext} from './Context'
 import { Link } from "react-router-dom";
 import { getFirestore } from '../firebase';
+import '../Cart.css'
 const agruparTortas = (cart, nombreDelProducto) => {
     let cantidad = 0;
     
@@ -39,9 +40,7 @@ const sumaTotal = (cart) => {
     return  precioFinalTotal
 }
 
-function uniq(a) {
-    return Array.from(new Set(a));
-}
+
 function Cart() {
     const { cart, eliminarProducto, updateCartCount, count } = useCartContext();
     
@@ -52,7 +51,7 @@ function Cart() {
         eliminarProducto(productoElegido);
     }
     const productosElegidos = cart.map((itemDelCarrito) => itemDelCarrito.producto)
-    const productosElegidosSinDuplicados = uniq(productosElegidos);
+    
     const [confirmacion, setConfirmacion] = useState(false);
     const crearOrden= (event) =>{
         event.preventDefault();
@@ -89,16 +88,27 @@ function Cart() {
         return (
             <div>
                 <h1> Carrito</h1>
-                {productosElegidosSinDuplicados.map((productoElegido) => (
-                    <div key ={productoElegido}>
-                        <h3> {productoElegido} x {agruparTortas(cart, productoElegido)} {sumaPrecio(cart, productoElegido)}</h3>
-                        <button onClick={()=> eliminarProductoDelCarrito(productoElegido)}>
-                            Eliminar del carrito
-                        </button>
-                    </div>
-                ))}
+                <table className='tabla'>
+                    <tr>
+                        <td className='titulo'>Nombre</td>
+                        <td className='titulo'>Cantidad</td>
+                        <td className='titulo'>Precio</td>
+                    </tr>
+                    {productosElegidos.map((productoElegido) => (
+                        <tr>
+                            <td>{productoElegido}</td>
+                            <td>{agruparTortas(cart, productoElegido)}</td>
+                            <td>${sumaPrecio(cart, productoElegido)}</td>
+                            <td>
+                            <button onClick={()=> eliminarProductoDelCarrito(productoElegido)}>
+                                Eliminar del carrito
+                            </button>
+                            </td>
+                        </tr>
+                    ))}
+                </table>
                 <h2> Total a pagar ${sumaTotal(cart)}</h2>
-                <form onSubmit={crearOrden}>    
+                <form onSubmit={crearOrden} className='form'>    
                     <h2> Completa la siguiente información para terminar tu compra</h2>
                     <h3 > Nombre y Apellido </h3>
                     <input name="nombre" ></input>

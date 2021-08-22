@@ -28,7 +28,7 @@ function Item (props){
                     <img src={props.imagenTorta} alt="torta" className='imagen'/>
                     <h2>{props.nombreTorta}</h2>
                     <h3>
-                        {props.precioTorta}
+                        ${props.precioTorta}
                     </h3>
                     
                 </Link>
